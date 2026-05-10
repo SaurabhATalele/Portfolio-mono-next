@@ -11,7 +11,7 @@ export function Footer() {
           <h2 className="font-display text-[48px] md:text-[64px] font-bold text-on-surface leading-tight uppercase tracking-tighter">Ready to build the next system?</h2>
           <p className="text-tertiary text-body-lg">Currently accepting high-impact opportunities in SaaS architecture and AI-driven products.</p>
           <div className="flex flex-col md:flex-row justify-center gap-6 pt-8">
-            <a className="bg-primary text-on-primary px-10 py-5 font-display text-headline-sm-mobile font-bold uppercase tracking-tighter" href="mailto:saurabhatalele@gmail.com">saurabhatalele@gmail.com</a>
+            <a className="bg-primary text-on-primary px-4 md:px-10 py-5 font-display text-headline-sm-mobile font-bold uppercase tracking-tighter" href="mailto:saurabhatalele@gmail.com">saurabhatalele@gmail.com</a>
           </div>
         </div>
       </section>
