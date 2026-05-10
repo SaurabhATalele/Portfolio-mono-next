@@ -1,12 +1,18 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { ThemeToggle } from "./ThemeToggle";
 import { SideNav } from './SideNav';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,12 +31,25 @@ export function Header() {
       setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  const handleNavClick = useCallback((sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+    }
+    setIsMenuOpen(false);
+  }, []);
+
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
   }, []);
 
   const getLinkClasses = (section: string) => {
@@ -42,27 +61,106 @@ export function Header() {
     return `${baseClasses} text-on-surface-variant hover:text-primary after:scale-x-0 hover:after:scale-x-100`;
   };
 
+  const navLinks = [
+    { id: "home", label: "Home" },
+    { id: "stack", label: "Stack" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+  ];
+
   return (
     <>
-      <header className="bg-background/80 backdrop-blur-md border-b border-black/10 dark:border-white/10 docked full-width top-0 sticky z-50 h-20">
-        <div className="max-w-[1200px] mx-auto flex justify-between items-center h-full px-margin-desktop">
-          <div className="font-display text-headline-lg font-bold tracking-tighter text-on-surface uppercase flex items-center gap-2">
-            <span className="text-primary font-code-sm">&gt;</span> Saurabh Talele
+      <header
+        className="bg-background/80 backdrop-blur-md border-b border-black/10 dark:border-white/10 w-full top-0 sticky z-50"
+        style={{ position: 'sticky', top: 0 }}
+      >
+        <div className="max-w-[1200px] mx-auto flex justify-between items-center h-20 px-6 md:px-8 lg:px-margin-desktop">
+          {/* Logo */}
+          <div className="font-display text-headline-sm md:text-headline-lg font-bold tracking-tighter text-on-surface uppercase flex items-center gap-2 whitespace-nowrap">
+            <span className="text-primary font-code-sm md:text-headline-lg">&gt;</span> Saurabh Talele
           </div>
-          <nav className="hidden md:flex items-center gap-8">
-            <a className={getLinkClasses("home")} href="#home" onClick={() => setActiveSection("home")}>Home</a>
-            <a className={getLinkClasses("stack")} href="#stack" onClick={() => setActiveSection("stack")}>Stack</a>
-            <a className={getLinkClasses("experience")} href="#experience" onClick={() => setActiveSection("experience")}>Experience</a>
-            <a className={getLinkClasses("projects")} href="#projects" onClick={() => setActiveSection("projects")}>Projects</a>
-          </nav>
-          <div className="flex items-center gap-4">
 
-            <Link href="#contact" className="bg-primary text-on-primary font-label-caps text-label-caps px-4 md:px-6 py-3 hover:opacity-90 active:scale-95 transition-all inline-block text-center whitespace-nowrap">
-              Let's Connect
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                className={getLinkClasses(link.id)}
+                href={`#${link.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.id);
+                }}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Actions */}
+          <div className="flex items-center gap-3 md:gap-4">
+            <Link
+              href="#contact"
+              className="hidden sm:inline-block bg-primary text-on-primary font-label-caps text-label-caps px-4 md:px-6 py-3 hover:opacity-90 active:scale-95 transition-all text-center whitespace-nowrap"
+            >
+              Let&apos;s Connect
             </Link>
             <ThemeToggle />
+            {mounted && (
+              <button
+                type="button"
+                className="md:hidden flex items-center justify-center w-12 h-12 cursor-pointer"
+                onClick={toggleMenu}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  toggleMenu();
+                }}
+                aria-label="Toggle Menu"
+                aria-expanded={isMenuOpen}
+              >
+                <Image
+                  src={isMenuOpen ? "/icons/close.svg" : "/icons/menu.svg"}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="dark:invert pointer-events-none"
+                  aria-hidden="true"
+                />
+              </button>
+            )}
           </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {mounted && isMenuOpen && (
+          <div className="md:hidden absolute top-20 left-0 w-full bg-background/95 backdrop-blur-lg border-b border-black/10 dark:border-white/10 z-40">
+            <nav className="flex flex-col p-8 gap-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  className={`${getLinkClasses(link.id)} inline-block`}
+                  href={`#${link.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.id);
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                className="sm:hidden bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 hover:opacity-90 active:scale-95 transition-all text-center whitespace-nowrap"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("contact");
+                }}
+              >
+                Let&apos;s Connect
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
       <SideNav />
     </>
