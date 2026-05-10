@@ -8,8 +8,8 @@ export default function Home() {
     <main className="w-full max-w-[1200px] mx-auto px-margin-mobile md:px-24 pt-4 pb-16">
       <Hero />
       <TechStack />
-      <Projects />
       <Experience />
+      <Projects />
     </main>
   );
 }
