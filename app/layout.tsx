@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
+import { Header } from "./components/Header";
+import { SideNav } from "./components/SideNav";
+import { Footer } from "./components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,14 +27,17 @@ export default function RootLayout({
       className={`${inter.variable} h-full antialiased scroll-smooth scroll-pt-20`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans transition-colors duration-300">
+      <body className="min-h-full flex flex-col font-sans transition-colors duration-300 w-full overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
+          <SideNav />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

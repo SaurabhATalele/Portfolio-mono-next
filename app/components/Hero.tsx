@@ -19,7 +19,7 @@ export function Hero() {
             Product-minded engineer building high-performance backend systems with clean architectures. Specialized in AI integration, enterprise automation, and resilient software ecosystems.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Link href='#projects' className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps uppercase font-bold flex items-center gap-3">
+            <Link href='/projects' className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps uppercase font-bold flex items-center gap-3">
               View Selected Work
               <Image src="/icons/external-link.svg" alt="External Link" width={16} height={16} className="opacity-70 invert dark:invert-0" />
             </Link>

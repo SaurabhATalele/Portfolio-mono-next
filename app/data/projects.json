@@ -1,0 +1,92 @@
+[
+  {
+    "id": "profilizer-pro",
+    "name": "ProfilizerPro",
+    "category": "SAAS / AI",
+    "description": "Next.js-based AI assessment platform for efficient evaluation and personalized feedback.",
+    "tech": ["Next.js", "TypeScript", "MongoDB", "AI"],
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/ProfilizerPro",
+    "demo": "https://profilize-pro.vercel.app"
+  },
+  {
+    "id": "mythic-codex",
+    "name": "Mythic-codex Clone",
+    "category": "FRONTEND CLONE",
+    "description": "A high-fidelity frontend clone of the Mythic-codex homepage built with Next.js.",
+    "tech": ["Next.js", "TypeScript", "Tailwind"],
+    "image": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/Mythic-Codex-Clone",
+    "demo": "https://mythic-codex-saurabhtalele.vercel.app/"
+  },
+  {
+    "id": "toools-design",
+    "name": "Toools.design Clone",
+    "category": "FRONTEND CLONE",
+    "description": "Modern UI/UX clone of the popular toools.design resource hub.",
+    "tech": ["Next.js", "TypeScript", "Tailwind"],
+    "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/Toools-design-clone",
+    "demo": "https://toools-design-clone.vercel.app/"
+  },
+  {
+    "id": "resu-builder",
+    "name": "ResuBuilder",
+    "category": "SAAS / AI",
+    "description": "AI-powered resume builder offering smart suggestions and optimized layouts.",
+    "tech": ["Next.js", "JavaScript", "MongoDB", "AI"],
+    "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/Resu-Builder",
+    "demo": "https://resu-builder.vercel.app/"
+  },
+  {
+    "id": "decision-gpt",
+    "name": "Decision GPT",
+    "category": "AI ASSISTANT",
+    "description": "AI decision-making assistant powered by ChatGPT API and Next.js.",
+    "tech": ["Next.js", "Tailwind", "JavaScript", "GPT-4"],
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/Decision-GTP",
+    "demo": "https://decision-gtp.vercel.app/"
+  },
+  {
+    "id": "gfg-ghrcem",
+    "name": "GFG GHRCEM Chapter",
+    "category": "WEB PORTAL",
+    "description": "Official web portal for GFG GHRCEM Students Chapter with database integration.",
+    "tech": ["Next.js", "Tailwind", "MongoDB", "Node.js"],
+    "image": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/GFG-GHRCEM-STUDENT-CHAPTER",
+    "demo": "https://gfg-ghrcem.vercel.app/"
+  },
+  {
+    "id": "tours-travels",
+    "name": "Tours and Travels App",
+    "category": "FULLSTACK / DJANGO",
+    "description": "Comprehensive tour booking system with Django backend and MySQL.",
+    "tech": ["Django", "MySQL", "JavaScript", "Python"],
+    "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/Tours-Management-System-.git",
+    "demo": "https://github.com/SaurabhATalele/Tours-Management-System-.git"
+  },
+  {
+    "id": "pib-news",
+    "name": "PIB News Extractor",
+    "category": "DATA EXTRACTION",
+    "description": "News extraction and distribution app for the Press Information Bureau.",
+    "tech": ["Python", "Django", "Java", "Android"],
+    "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/PIB-News-Extractor",
+    "demo": "https://github.com/SaurabhATalele/PIB-News-Extractor"
+  },
+  {
+    "id": "cloud-storage",
+    "name": "Cloud Storage App",
+    "category": "SAAS / CLOUD",
+    "description": "Secure cloud storage solution with automated backup and cross-device access.",
+    "tech": ["Python", "Django", "JavaScript", "Cloud"],
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=2070",
+    "github": "https://github.com/SaurabhATalele/cloud-app-using-django",
+    "demo": "https://github.com/SaurabhATalele/cloud-app-using-django"
+  }
+]
