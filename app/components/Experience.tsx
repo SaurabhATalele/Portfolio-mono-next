@@ -17,7 +17,7 @@ export function Experience() {
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                   <div>
-                    <h3 className="font-display text-headline-lg text-on-surface flex items-center gap-4">
+                    <h3 className="font-display text-headline-lg text-on-surface flex md:items-center gap-4 flex-col md:flex-row">
                       {exp.company}
                       <span className={`font-code-sm text-code-sm px-2 py-0.5 uppercase ${exp.isPrimaryRole ? 'text-primary border border-primary/30' : 'text-tertiary border border-black/20 dark:border-white/20'}`}>
                         {exp.role}
