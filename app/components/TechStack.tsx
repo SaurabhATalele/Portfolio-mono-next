@@ -22,7 +22,6 @@ export function TechStack() {
               <span className="material-symbols-outlined text-primary text-3xl" data-icon={category.icon}>{category.icon}</span>
               <span className="font-code-sm text-code-sm text-on-surface-variant opacity-40">{category.id}</span>
             </div>
-            <h3 className="font-display text-headline-lg text-on-surface mb-4">{category.description}</h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
                 <span key={skill} className="font-code-sm text-code-sm bg-surface-container px-2 py-1 border border-black/5 dark:border-white/5">
