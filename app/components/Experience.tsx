@@ -6,7 +6,7 @@ export function Experience() {
     <>
       <section className="space-y-16" id="experience">
         <div className="flex items-center gap-6">
-          <h2 className="font-display text-[48px] font-bold text-on-surface uppercase tracking-tighter">Experience</h2>
+          <h2 className="font-display text-[40px] md:text-[48px] font-bold text-on-surface uppercase tracking-tighter">Experience</h2>
           <div className="h-[1px] flex-grow bg-white/10"></div>
           <div className="font-code-sm text-code-sm text-tertiary">HISTORY_LOG</div>
         </div>

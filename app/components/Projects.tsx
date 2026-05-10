@@ -5,7 +5,7 @@ export function Projects() {
     <>
 <section id="projects" className="space-y-12">
 <div className="flex flex-col md:flex-row items-end justify-between gap-4">
-<h2 className="font-display text-[48px] font-bold text-on-surface uppercase tracking-tighter">Featured Works</h2>
+<h2 className="font-display text-[40px] md:text-[48px] font-bold text-on-surface uppercase tracking-tighter">Featured Works</h2>
 <a className="text-primary font-label-caps text-label-caps uppercase tracking-widest hover:underline underline-offset-8" href="#">Explore full archive</a>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-6 min-h-[600px]">

@@ -57,7 +57,7 @@ export function Header() {
           </nav>
           <div className="flex items-center gap-4">
 
-            <Link href="#contact" className="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 hover:opacity-90 active:scale-95 transition-all inline-block">
+            <Link href="#contact" className="bg-primary text-on-primary font-label-caps text-label-caps px-4 md:px-6 py-3 hover:opacity-90 active:scale-95 transition-all inline-block text-center whitespace-nowrap">
               Let's Connect
             </Link>
             <ThemeToggle />

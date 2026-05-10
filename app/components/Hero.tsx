@@ -12,7 +12,7 @@ export function Hero() {
             <span className="w-12 h-[1px] bg-white/10"></span>
             <span className="text-on-surface-variant font-code-sm text-code-sm">SYSTEM_READY: TRUE</span>
           </div>
-          <h1 className="font-display text-[80px] md:text-[100px] leading-none font-extrabold tracking-tighter uppercase text-on-surface">
+          <h1 className="font-display text-[50px] sm:text-[70px] md:text-[100px] leading-none font-extrabold tracking-tighter uppercase text-on-surface">
             SAURABH <span className="text-primary">TALELE</span>
           </h1>
           <p className="font-body-lg text-body-lg text-tertiary max-w-lg">

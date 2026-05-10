@@ -7,7 +7,7 @@ export function TechStack() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-4">
           <div className="font-code-sm text-code-sm text-primary">TECHNICAL_STACK</div>
-          <h2 className="font-display text-[48px] md:text-[64px] font-bold text-on-surface uppercase leading-none tracking-tighter">
+          <h2 className="font-display text-[40px] md:text-[64px] font-bold text-on-surface uppercase leading-none tracking-tighter">
             Technical<br />Ecosystem
           </h2>
         </div>
