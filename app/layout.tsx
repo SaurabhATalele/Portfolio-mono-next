@@ -14,6 +14,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "SAURABH TALELE | Software Developer Portfolio",
   description: "Product-minded engineer building high-performance backend systems with clean architectures.",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
