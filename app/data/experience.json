@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "company": "BENTLEY SYSTEMS",
+    "role": "Associate Software Engineer",
+    "isPrimaryRole": true,
+    "details": "Full Time • Jul 2024 - Present",
+    "description": "Conceptualized and launched an AI-free resume builder designed to stand apart from generic AI-generated career tools through premium craft and professional authenticity.",
+    "impacts": [
+      {
+        "title": "Full Stack Development Excellence",
+        "description": "Developed responsive and accessible UI components using React.js while building scalable backend services with TypeScript and Node.js, improving usability, reliability, and overall system performance."
+      },
+      {
+        "title": "Automation, Agile & AI-Driven Efficiency",
+        "description": "Automated CI/CD pipelines using GitHub Actions and Azure DevOps, collaborated within Agile teams, resolved complex issues, and leveraged AI-powered tools to accelerate development and improve application stability."
+      }
+    ],
+    "skills": [
+      "React.js",
+      "Node.js",
+      "TypeScript",
+      "GitHub Actions",
+      "Azure DevOps",
+      "Agile",
+      "Problem Solving"
+    ]
+  },
+  {
+    "id": "2",
+    "company": "CRYPTONET TECHNOLOGIES",
+    "role": "Frontend Developer Intern",
+    "isPrimaryRole": false,
+    "details": "Internship • Feb 2024 - Apr 2024 • On-Site",
+    "description": "Built dynamic and high-performance web applications using Next.js and React.js, focusing on responsive UI development, accessibility, and frontend optimization.",
+    "impacts": [
+      {
+        "title": "Modern Frontend Development",
+        "description": "Developed dynamic server-side rendered applications with Next.js and React.js while creating reusable and accessible UI components following modern UI/UX standards."
+      },
+      {
+        "title": "Performance Optimization & Agile Collaboration",
+        "description": "Improved Lighthouse performance scores from 80 to 90+ through code splitting, lazy loading, and image optimization while collaborating in Agile teams using JIRA for sprint planning and issue resolution."
+      }
+    ],
+    "skills": [
+      "Next.js",
+      "React.js",
+      "JavaScript",
+      "Frontend Optimization",
+      "UI/UX",
+      "Responsive Design",
+      "JIRA",
+      "Agile"
+    ]
+  }
+]

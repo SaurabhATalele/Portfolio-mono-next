@@ -1,0 +1,57 @@
+[
+  {
+    "id": "01",
+    "icon": "Backend Systems and APIs",
+    "description": "Designing and developing robust backend architectures, APIs, and database-driven applications focused on scalability, reliability, and performance.",
+    "skills": [
+      "Node.js",
+      "Go",
+      "PostgreSQL",
+      "Java",
+      "gRPC",
+      "Python",
+      "Django",
+      "MySQL"
+    ]
+  },
+  {
+    "id": "02",
+    "icon": "Frontend and UI Development",
+    "description": "Building responsive, accessible, and visually engaging user interfaces using modern frontend frameworks and design systems.",
+    "skills": [
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Framer",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": "03",
+    "icon": "AI & Automation",
+    "description": "Developing AI-powered applications and workflow automation solutions using LLMs, orchestration frameworks, and intelligent integrations.",
+    "skills": [
+      "LangChain",
+      "OpenAI",
+      "MCP",
+      "Python",
+      "Claude"
+    ]
+  },
+  {
+    "id": "04",
+    "icon": "DevOps & Cloud",
+    "description": "Implementing cloud infrastructure, containerization, and CI/CD pipelines to streamline deployment, scalability, and development workflows.",
+    "skills": [
+      "Docker",
+      "AWS",
+      "CI/CD",
+      "Azure DevOps",
+      "Github Actions",
+      "Linux"
+    ]
+  }
+]
