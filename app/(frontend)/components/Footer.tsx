@@ -32,9 +32,9 @@ export function Footer() {
             <div className="space-y-4">
               <div className="font-label-caps text-label-caps text-on-surface-variant uppercase opacity-50">Navigation</div>
               <ul className="space-y-2 font-code-sm text-code-sm">
-                <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="#">Home</a></li>
-                <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="#experience">Experience</a></li>
-                <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="#projects">Projects</a></li>
+                <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="/#">Home</a></li>
+                <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="/#experience">Experience</a></li>
+                <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="/projects">Projects</a></li>
                 <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="/blogs">Blogs</a></li>
               </ul>
             </div>

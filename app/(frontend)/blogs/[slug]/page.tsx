@@ -9,6 +9,7 @@ import {
 import Link from 'next/link'
 import { RichText } from '../../components/RichText'
 import Image from 'next/image'
+import { ShareActions } from '../../components/ShareActions'
 
 const jsxConverters: JSXConvertersFunction = ({ defaultConverters }) => ({
   ...defaultConverters,
@@ -200,11 +201,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="p-8 bg-surface-container border border-black/5 dark:border-white/5 space-y-6">
               <h3 className="font-display text-xl font-bold uppercase tracking-tight">Share Article</h3>
               <div className="flex gap-4">
-                {['twitter', 'linkedin', 'copy'].map((platform) => (
-                  <button key={platform} className="px-4 py-2 border border-black/10 dark:border-white/10 text-xs font-code-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300">
-                    <Image src={`/icons/${platform}.svg`} alt={platform} width={20} height={20} className='invert-0 dark:invert' />
-                  </button>
-                ))}
+                <ShareActions title={post.title} slug={post.slug} />
               </div>
             </div>
 
