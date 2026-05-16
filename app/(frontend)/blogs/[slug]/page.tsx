@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="relative w-full overflow-hidden bg-black">
         {post.image && typeof post.image === 'object' && (
           <img
-            src={post.image.url}
+            src={post.image.url || ''}
             alt={post.image.alt || post.title}
             className="w-full h-[50vh] object-cover opacity-60 grayscale scale-105"
           />

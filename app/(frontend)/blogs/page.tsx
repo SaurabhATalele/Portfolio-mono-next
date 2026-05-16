@@ -38,7 +38,7 @@ export default async function BlogsPage() {
             <div className="aspect-[16/10] overflow-hidden bg-black/5 dark:bg-white/5">
               {post.image && typeof post.image === 'object' && (
                 <img 
-                  src={post.image.url} 
+                  src={post.image.url || ''} 
                   alt={post.image.alt || post.title} 
                   className="w-full h-full object-cover transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                 />
