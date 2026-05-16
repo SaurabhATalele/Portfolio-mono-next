@@ -29,8 +29,8 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URL || '',
-      user: "postgres",
-      password: "1234"
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD
     },
   }),
   sharp,
