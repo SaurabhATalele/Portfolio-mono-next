@@ -71,7 +71,7 @@ export function Header() {
     { id: "home", label: "Home", path: "/#home" },
     { id: "stack", label: "Stack", path: "/#stack" },
     { id: "experience", label: "Experience", path: "/#experience" },
-    { id: "projects", label: "Projects", path: "/projects" },
+    { id: "projects", label: "Projects", path: "/#projects" },
   ];
 
   return (
