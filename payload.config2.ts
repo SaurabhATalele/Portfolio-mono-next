@@ -71,7 +71,7 @@ export default buildConfig({
     secret: process.env.PAYLOAD_SECRET || 'fallback-secret-for-build-only',
     db: postgresAdapter({
         pool: {
-            connectionString: process.env.DATABASE_URI || 'postgres://127.0.0.1:5432/payload_empty',
+            connectionString: process.env.DATABASE_URI,
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD
         },
