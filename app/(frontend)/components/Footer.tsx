@@ -35,6 +35,7 @@ export function Footer() {
                 <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="#">Home</a></li>
                 <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="#experience">Experience</a></li>
                 <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="#projects">Projects</a></li>
+                <li><a className="text-tertiary hover:text-primary transition-all underline underline-offset-4" href="/blogs">Blogs</a></li>
               </ul>
             </div>
             {/* <div className="space-y-4">
