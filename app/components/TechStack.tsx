@@ -3,7 +3,7 @@ import techStackData from '../data/techStack.json';
 
 export function TechStack() {
   return (
-    <section id="stack" className="space-y-12 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+    <section id="stack" className="space-y-12 min-h-[calc(100vh-5rem)] flex flex-col justify-center w-full overflow-hidden my-4">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-4">
           <div className="font-code-sm text-code-sm text-primary">TECHNICAL_STACK</div>

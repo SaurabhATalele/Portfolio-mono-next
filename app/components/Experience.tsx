@@ -4,11 +4,11 @@ import experienceData from '../data/experience.json';
 export function Experience() {
   return (
     <>
-      <section className="space-y-16" id="experience">
+      <section className="space-y-16 my-4" id="experience">
         <div className="flex items-center gap-6">
           <h2 className="font-display text-[40px] md:text-[48px] font-bold text-on-surface uppercase tracking-tighter">Experience</h2>
           <div className="h-[1px] flex-grow bg-white/10"></div>
-          <div className="font-code-sm text-code-sm text-tertiary">HISTORY_LOG</div>
+          <div className="hidden md:block font-code-sm text-code-sm text-tertiary">HISTORY_LOG</div>
         </div>
         <div className="space-y-12 max-w-4xl ml-auto border-l border-black/10 dark:border-white/10 pl-8 md:pl-16 relative">
           {experienceData.map((exp, index) => (

@@ -231,5 +231,18 @@ body {
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--surface-container-lowest); }
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 0px; }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 999;
+}
 
 * { border-radius: 0 !important; }
