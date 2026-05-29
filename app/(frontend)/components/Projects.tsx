@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import projectsData from '../data/projects.json';
 import { ProjectCard } from './ProjectCard';
+import Image from 'next/image';
 
 export function Projects() {
   // Display the first 3 projects as featured works
@@ -18,10 +19,10 @@ export function Projects() {
           </h2>
         </div>
         <Link
-          className="text-primary font-label-caps text-label-caps uppercase tracking-widest hover:underline underline-offset-8 transition-all"
+          className="text-primary font-label-caps text-label-caps uppercase tracking-widest hover:underline underline-offset-8 transition-all flex items-center"
           href="/projects"
         >
-          Explore full archive &mdash;&gt;
+          Explore full archive <Image src="/icons/back.svg" alt="Right Arrow" width={18} height={15} className="ml-2 rotate-180 dark:invert" />
         </Link>
       </div>
 
