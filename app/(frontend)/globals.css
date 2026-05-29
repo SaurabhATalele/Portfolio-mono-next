@@ -217,20 +217,33 @@ body {
 }
 
 .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    vertical-align: middle;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
 }
+
 .shadow-glow {
-    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 20px -5px var(--surface);
 }
+
 .glass-panel {
-    background: rgba(18, 18, 18, 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 18, 18, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--surface-container-lowest); }
-::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 0px; }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-container-lowest);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 0px;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -245,4 +258,6 @@ body {
   z-index: 999;
 }
 
-* { border-radius: 0 !important; }
+* {
+  border-radius: 0 !important;
+}
