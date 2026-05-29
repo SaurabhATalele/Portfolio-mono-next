@@ -12,14 +12,14 @@ export function Hero() {
             <span className="w-12 h-[1px] bg-white/10"></span>
             <span className="text-on-surface-variant font-code-sm text-code-sm">SYSTEM_READY: TRUE</span>
           </div>
-          <h1 className="font-display text-[80px] md:text-[100px] leading-none font-extrabold tracking-tighter uppercase text-on-surface">
+          <h1 className="font-display text-[50px] sm:text-[70px] md:text-[100px] leading-none font-extrabold tracking-tighter uppercase text-on-surface">
             SAURABH <span className="text-primary">TALELE</span>
           </h1>
           <p className="font-body-lg text-body-lg text-tertiary max-w-lg">
             Product-minded engineer building high-performance backend systems with clean architectures. Specialized in AI integration, enterprise automation, and resilient software ecosystems.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Link href='#projects' className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps uppercase font-bold flex items-center gap-3">
+            <Link href='/projects' className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps uppercase font-bold flex items-center gap-3">
               View Selected Work
               <Image src="/icons/external-link.svg" alt="External Link" width={16} height={16} className="opacity-70 invert dark:invert-0" />
             </Link>
@@ -57,9 +57,9 @@ export function Hero() {
           <p className="text-tertiary text-body-md opacity-60">Delivered robust internal tools, automation, and enterprise solutions.</p>
         </div>
         <div className="space-y-2">
-          <div className="text-[48px] font-display font-bold text-on-surface">SaaS + AI</div>
+          <div className="text-[48px] font-display font-bold text-on-surface">Full Stack + AI</div>
           <div className="font-code-sm text-code-sm text-primary uppercase tracking-widest">Tech Specialization</div>
-          <p className="text-tertiary text-body-md opacity-60">Building AI-powered automation, SaaS and enterprise solutions.</p>
+          <p className="text-tertiary text-body-md opacity-60">Building AI-powered automation, Full stack development and enterprise solutions.</p>
         </div>
       </section>
     </>

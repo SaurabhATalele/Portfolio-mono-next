@@ -4,11 +4,11 @@ import experienceData from '../data/experience.json';
 export function Experience() {
   return (
     <>
-      <section className="space-y-16" id="experience">
+      <section className="space-y-16 my-4" id="experience">
         <div className="flex items-center gap-6">
-          <h2 className="font-display text-[48px] font-bold text-on-surface uppercase tracking-tighter">Experience</h2>
+          <h2 className="font-display text-[40px] md:text-[48px] font-bold text-on-surface uppercase tracking-tighter">Experience</h2>
           <div className="h-[1px] flex-grow bg-white/10"></div>
-          <div className="font-code-sm text-code-sm text-tertiary">HISTORY_LOG</div>
+          <div className="hidden md:block font-code-sm text-code-sm text-tertiary">HISTORY_LOG</div>
         </div>
         <div className="space-y-12 max-w-4xl ml-auto border-l border-black/10 dark:border-white/10 pl-8 md:pl-16 relative">
           {experienceData.map((exp, index) => (
@@ -17,7 +17,7 @@ export function Experience() {
               <div className="space-y-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                   <div>
-                    <h3 className="font-display text-headline-lg text-on-surface flex items-center gap-4">
+                    <h3 className="font-display text-headline-lg text-on-surface flex md:items-center gap-4 flex-col md:flex-row">
                       {exp.company}
                       <span className={`font-code-sm text-code-sm px-2 py-0.5 uppercase ${exp.isPrimaryRole ? 'text-primary border border-primary/30' : 'text-tertiary border border-black/20 dark:border-white/20'}`}>
                         {exp.role}
