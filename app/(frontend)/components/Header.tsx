@@ -5,6 +5,7 @@ import { SideNav } from './SideNav';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Tooltip } from './Tooltip';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -121,6 +122,24 @@ export function Header() {
               Let&apos;s Connect
             </Link>
             <ThemeToggle />
+            <div className="relative group inline-block">
+              <Link
+                href={"https://resume-saurabhatalele.vercel.app"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-primary text-on-primary font-label-caps text-label-caps p-2 rounded hover:opacity-90 active:scale-95 transition-all text-center whitespace-nowrap">
+                <Image
+                  src="/icons/download.svg"
+                  width={20}
+                  height={20}
+                  alt="download"
+                  className='dark:invert-0 invert'
+                />
+              </Link>
+              <Tooltip text='Download Resume' />
+
+
+            </div>
             {mounted && (
               <button
                 type="button"
