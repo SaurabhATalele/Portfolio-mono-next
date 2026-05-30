@@ -7,8 +7,6 @@ import {
   RichText as PayloadRichText,
 } from '@payloadcms/richtext-lexical/react'
 import Link from 'next/link'
-import { RichText } from '../../components/RichText'
-import Image from 'next/image'
 import { ShareActions } from '../../components/ShareActions'
 import { CodeBlock } from '../../components/CodeBlock'
 
@@ -206,7 +204,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             <div className="prose prose-xl dark:prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight prose-p:text-tertiary prose-p:leading-loose">
 
-              <PayloadRichText data={post.content} converters={jsxConverters} />
+          {post.content ? (
+            <PayloadRichText data={post.content} converters={jsxConverters} />
+          ) : (
+            <PayloadRichText data={{
+              root: {
+                type: 'root',
+                children: [],
+                direction: null,
+                format: '',
+                indent: 0,
+                version: 1,
+              },
+            }} converters={jsxConverters} />
+          )}
 
 
             </div>
