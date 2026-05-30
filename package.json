@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev": "next dev",
     "build": "payload migrate && next build",
     "start": "next start",
     "lint": "eslint"
@@ -20,6 +20,7 @@
     "payload": "^3.84.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-syntax-highlighter": "^16.1.1",
     "sharp": "^0.34.5"
   },
   "devDependencies": {

@@ -1,4 +1,21 @@
-import type { CollectionConfig } from 'payload'
+import {
+  lexicalEditor,
+  BlocksFeature,
+} from '@payloadcms/richtext-lexical';
+import type { CollectionConfig, Block } from 'payload';
+
+export const CodeSnippet: Block = {
+  slug: 'code',
+  fields: [
+    { name: 'filename', type: 'text' },
+    {
+      name: 'language',
+      type: 'select',
+      options: ['ts', 'tsx', 'js', 'jsx', 'go', 'python', 'yaml', 'cpp', 'css', 'java'],
+    },
+    { name: 'code', type: 'textarea' },
+  ],
+};
 
 export const Blogs: CollectionConfig = {
   slug: 'blogs',
@@ -24,7 +41,16 @@ export const Blogs: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
-      required: true,
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          BlocksFeature({
+            blocks: [
+              CodeSnippet,
+            ],
+          }),
+        ],
+      }),
     },
     {
       name: 'excerpt',
@@ -46,3 +72,5 @@ export const Blogs: CollectionConfig = {
     },
   ],
 }
+
+

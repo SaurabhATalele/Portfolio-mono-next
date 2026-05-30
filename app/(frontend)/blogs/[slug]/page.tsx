@@ -10,9 +10,25 @@ import Link from 'next/link'
 import { RichText } from '../../components/RichText'
 import Image from 'next/image'
 import { ShareActions } from '../../components/ShareActions'
+import { CodeBlock } from '../../components/CodeBlock'
+
+
 
 const jsxConverters: JSXConvertersFunction = ({ defaultConverters }) => ({
   ...defaultConverters,
+
+  blocks: {
+    code: ({ node }: { node: any }) => {
+      const { code, language, filename } = node.fields;
+      return (
+        <CodeBlock
+          code={code}
+          language={language}
+          filename={filename}
+        />
+      )
+    },
+  },
 
   // HEADINGS
   heading: ({ node, nodesToJSX }) => {

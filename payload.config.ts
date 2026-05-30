@@ -29,13 +29,13 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: process.env.DATABASE_URI || ''
     },
   }),
   sharp,
-   plugins: [
+  plugins: [
     vercelBlobStorage({
-      enabled: true, 
+      enabled: true,
       collections: {
         media: true, // This matches your collection slug
       },
