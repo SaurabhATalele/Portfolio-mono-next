@@ -257,7 +257,3 @@ body {
 ::view-transition-new(root) {
   z-index: 999;
 }
-
-* {
-  border-radius: 0 !important;
-}

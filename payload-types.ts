@@ -173,7 +173,7 @@ export interface Blog {
   id: number;
   title: string;
   slug: string;
-  content: {
+  content?: {
     root: {
       type: string;
       children: {
@@ -187,7 +187,7 @@ export interface Blog {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   excerpt?: string | null;
   image?: (number | null) | Media;
   tags?: (number | Tag)[] | null;
