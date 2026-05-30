@@ -10,6 +10,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Blogs } from './collections/Blogs'
 import { Tags } from './collections/Tags'
+import { mongooseAdapter } from '@payloadcms/db-mongodb'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -27,15 +28,18 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: postgresAdapter({
-    pool: {
-      connectionString: process.env.DATABASE_URI || '',
-    },
+  // db: postgresAdapter({
+  //   pool: {
+  //     connectionString: process.env.DATABASE_URI || '',
+  //   },
+  // }),
+  db: mongooseAdapter({
+    url: process.env.MONGO_DATABASE_URL || '',
   }),
   sharp,
-   plugins: [
+  plugins: [
     vercelBlobStorage({
-      enabled: true, 
+      enabled: true,
       collections: {
         media: true, // This matches your collection slug
       },
