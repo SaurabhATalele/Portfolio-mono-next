@@ -43,8 +43,8 @@ export async function POST(req: Request) {
 
     if (!user) {
         return NextResponse.json({
-            success: false,0
-            message: "Unauthorized",
+            success: false,
+            message: "Unauthorized"
         }, { status: 401 });
     }
 
@@ -155,7 +155,7 @@ export async function POST(req: Request) {
     } catch (error) {
         return NextResponse.json({
             success: false,
-            message: "Internal server error",
+            message: "Internal server error"
         }, { status: 500 });
     }
 }
