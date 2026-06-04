@@ -43,7 +43,7 @@ export function TestimonialsSection({ initialTestimonials }: TestimonialsSection
           className="text-primary font-label-caps text-label-caps uppercase tracking-widest hover:underline underline-offset-8 transition-all flex items-center"
           href="/testimonials"
         >
-          Explore full archive <Image src="/icons/back.svg" alt="Right Arrow" width={18} height={15} className="ml-2 rotate-180 dark:invert" />
+          View More <Image src="/icons/back.svg" alt="Right Arrow" width={18} height={15} className="ml-2 rotate-180 dark:invert" />
         </Link>
       </div>
 
