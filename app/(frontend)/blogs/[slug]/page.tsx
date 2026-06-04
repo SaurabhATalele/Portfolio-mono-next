@@ -233,7 +233,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               Back to Archive
             </Link>
 
-            <h1 className="font-display text-[40px] md:text-[60px] font-bold leading-tight uppercase tracking-tighter text-on-surface">
+            <h1 className="font-display text-[30px] md:text-[40px] font-bold leading-tight uppercase tracking-tighter text-on-surface">
               {post.title}
             </h1>
 
@@ -264,20 +264,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             <div className="prose prose-xl dark:prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight prose-p:text-tertiary prose-p:leading-loose">
 
-          {post.content ? (
-            <PayloadRichText data={post.content} converters={jsxConverters} />
-          ) : (
-            <PayloadRichText data={{
-              root: {
-                type: 'root',
-                children: [],
-                direction: null,
-                format: '',
-                indent: 0,
-                version: 1,
-              },
-            }} converters={jsxConverters} />
-          )}
+              {post.content ? (
+                <PayloadRichText data={post.content} converters={jsxConverters} />
+              ) : (
+                <PayloadRichText data={{
+                  root: {
+                    type: 'root',
+                    children: [],
+                    direction: null,
+                    format: '',
+                    indent: 0,
+                    version: 1,
+                  },
+                }} converters={jsxConverters} />
+              )}
 
 
             </div>
