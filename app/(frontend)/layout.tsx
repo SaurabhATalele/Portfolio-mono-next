@@ -26,6 +26,22 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png', sizes: '180x180' }, // iOS
     ],
   },
+  openGraph: {
+    title: 'My Website',
+    description: 'My website description',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'My Website',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-image.jpg'],
+  },
 };
 
 export default function RootLayout({
