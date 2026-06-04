@@ -15,6 +15,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL!
+  ),
+  alternates: {
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
+  },
   title: "SAURABH TALELE | Software Developer Portfolio",
   description: "Product-minded engineer building high-performance backend systems with clean architectures.",
   icons: {
