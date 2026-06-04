@@ -18,7 +18,13 @@ export const metadata: Metadata = {
   title: "SAURABH TALELE | Software Developer Portfolio",
   description: "Product-minded engineer building high-performance backend systems with clean architectures.",
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' }, // Browser favicon
+      { url: '/favicon.svg', type: 'image/svg+xml' }, // Modern browsers
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' }, // iOS
+    ],
   },
 };
 
