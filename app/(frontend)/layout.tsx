@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'My Website',
-    description: 'My website description',
+    title: 'Saurabh Talele',
+    description: 'Saurabh Talele Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'My Website',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
 };
 
