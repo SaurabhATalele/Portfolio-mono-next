@@ -18,7 +18,7 @@ async function getTestimonials() {
       },
       sort: '-createdAt',
     });
-    
+
     return result.docs.map((doc: any) => ({
       id: doc.id,
       name: doc.name,

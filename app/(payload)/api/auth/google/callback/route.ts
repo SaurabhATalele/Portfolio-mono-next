@@ -45,7 +45,12 @@ export async function GET(req: Request) {
   }
 
   // Set the profile in a secure cookie
-  const response = NextResponse.redirect(new URL('/', process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'))
+  const response = NextResponse.redirect(
+  new URL(
+    "/testimonials/add/new",
+    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+  )
+);
   response.cookies.set('google_user_session', JSON.stringify(profile), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',

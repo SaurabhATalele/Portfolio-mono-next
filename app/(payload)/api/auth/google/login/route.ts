@@ -10,7 +10,7 @@ export async function GET() {
   if (!client_id || !client_secret) {
     console.warn("GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET not set. Falling back to mockup mode.")
     const mockUrl = `/api/auth/google/callback?code=mock_code_for_testing`
-    return NextResponse.redirect(new URL(mockUrl, process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'))
+    return NextResponse.redirect(new URL(mockUrl, `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/testimonials/add/new`))
   }
 
   const client = new OAuth2Client(client_id, client_secret, redirect_uri)
