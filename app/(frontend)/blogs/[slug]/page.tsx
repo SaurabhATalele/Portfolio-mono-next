@@ -2,6 +2,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { notFound } from 'next/navigation'
 import React from 'react'
+import type { Metadata } from 'next'
 import {
   JSXConvertersFunction,
   RichText as PayloadRichText,
@@ -11,6 +12,68 @@ import { ShareActions } from '../../components/ShareActions'
 import { CodeBlock } from '../../components/CodeBlock'
 
 
+
+// ISR: revalidate every 60 seconds
+export const revalidate = 21600;
+
+// Generate static params for all blog slugs
+export async function generateStaticParams() {
+  const payload = await getPayload({ config });
+  const posts = await payload.find({
+    collection: 'blogs',
+    depth: 0,
+  });
+  return posts.docs.map((post: any) => ({ slug: post.slug }));
+}
+
+// Generate SEO Metadata for Next.js
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const payload = await getPayload({ config })
+
+  const posts = await payload.find({
+    collection: 'blogs',
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+    depth: 1,
+  })
+
+  const post = posts.docs[0]
+  if (!post) {
+    return {}
+  }
+
+  const title = post.meta?.title || `${post.title} | Saurabh Talele`
+  const description = post.meta?.description || post.excerpt || ''
+  const imageUrl = post.meta?.image && typeof post.meta.image === 'object' ? post.meta.image.url : null
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      ...(imageUrl && {
+        images: [
+          {
+            url: imageUrl,
+            alt: title,
+          },
+        ],
+      }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      ...(imageUrl && { images: [imageUrl] }),
+    },
+  }
+}
 
 const jsxConverters: JSXConvertersFunction = ({ defaultConverters }) => ({
   ...defaultConverters,
@@ -122,9 +185,6 @@ const jsxConverters: JSXConvertersFunction = ({ defaultConverters }) => ({
     return null
   },
 })
-
-
-export const dynamic = 'force-dynamic'
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params

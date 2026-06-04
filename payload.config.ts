@@ -5,6 +5,7 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { seoPlugin } from '@payloadcms/plugin-seo'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -40,6 +41,13 @@ export default buildConfig({
         media: true, // This matches your collection slug
       },
       token: process.env.BLOB_READ_WRITE_TOKEN,
+    }),
+    seoPlugin({
+      collections: ['blogs'],
+      uploadsCollection: 'media',
+      generateTitle: ({ doc }: any) => doc?.title ? `${doc.title} | Saurabh Talele` : 'Saurabh Talele',
+      generateDescription: ({ doc }: any) => doc?.excerpt || '',
+      generateURL: ({ doc }: any) => doc?.slug ? `https://saurabh-talele.com/blogs/${doc.slug}` : 'https://saurabh-talele.com',
     }),
   ],
 })
