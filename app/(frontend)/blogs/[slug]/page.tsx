@@ -80,12 +80,10 @@ const jsxConverters: JSXConvertersFunction = ({ defaultConverters }) => ({
 
   blocks: {
     code: ({ node }: { node: any }) => {
-      const { code, language, filename } = node.fields;
+      const { code, language } = node.fields;
       return (
         <CodeBlock
           code={code}
-          language={language}
-          filename={filename}
         />
       )
     },

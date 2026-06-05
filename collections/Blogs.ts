@@ -1,6 +1,10 @@
 import {
   lexicalEditor,
   BlocksFeature,
+  FixedToolbarFeature,
+  EXPERIMENTAL_TableFeature,
+  InlineCodeFeature,
+  TreeViewFeature,
 } from '@payloadcms/richtext-lexical';
 import type { CollectionConfig, Block } from 'payload';
 
@@ -11,7 +15,7 @@ export const CodeSnippet: Block = {
     {
       name: 'language',
       type: 'select',
-      options: ['ts', 'tsx', 'js', 'jsx', 'go', 'python', 'yaml', 'cpp', 'css', 'java'],
+      options: ['typescript', 'javascript', 'go', 'python', 'yaml', 'cpp', 'css', 'java', 'shell'],
     },
     { name: 'code', type: 'textarea' },
   ],
@@ -44,11 +48,10 @@ export const Blogs: CollectionConfig = {
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [
           ...defaultFeatures,
-          BlocksFeature({
-            blocks: [
-              CodeSnippet,
-            ],
-          }),
+          FixedToolbarFeature(),
+          EXPERIMENTAL_TableFeature(),
+          BlocksFeature({ blocks: [CodeSnippet] }),
+          TreeViewFeature()
         ],
       }),
     },

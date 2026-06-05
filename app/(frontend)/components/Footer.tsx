@@ -11,22 +11,32 @@ export function Footer() {
           <h2 className="font-display text-[48px] md:text-[64px] font-bold text-on-surface leading-tight uppercase tracking-tighter">Ready to build the next system?</h2>
           <p className="text-tertiary text-body-lg">Currently accepting high-impact opportunities in SaaS architecture and AI-driven products.</p>
           <div className="flex flex-col md:flex-row justify-center pt-8">
-            <a className="bg-primary text-on-primary flex justify-center py-5 font-display text-headline-sm-mobile font-bold uppercase tracking-tighter" href="mailto:saurabhatalele@gmail.com">saurabhatalele@gmail.com</a>
+            <a className="bg-primary text-sm lg:text-md text-on-primary flex justify-center py-5 font-display text-headline-sm-mobile font-bold uppercase tracking-tighter p-2" href="mailto:saurabhatalele@gmail.com">saurabhatalele@gmail.com</a>
           </div>
         </div>
       </section>
       <footer className="bg-background border-t border-black/5 dark:border-white/5 py-24">
         <div className="max-w-[1200px] mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="space-y-6">
-            <div className="font-display text-headline-lg font-bold tracking-tighter text-on-surface uppercase">SAURABH TALELE</div>
-            <p className="text-on-surface-variant text-body-md max-w-xs">Software Engineer specializing in high-performance backend systems and enterprise AI integration.</p>
-            <div className="flex items-center gap-4 text-primary font-code-sm text-code-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 bg-primary"></span>
-              </span>
-              ALL_SYSTEMS_OPERATIONAL
+            <div>
+              <h1 className="font-display text-headline-lg font-bold tracking-tighter text-on-surface uppercase">
+                SAURABH TALELE
+              </h1>
+
+              <div className="mt-2 flex items-center gap-2 text-primary font-code-sm">
+                <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                <span>Available for Full Stack Engineering Opportunities</span>
+              </div>
             </div>
+
+            <p className="text-on-surface-variant text-body-md max-w-md leading-relaxed">
+              Full Stack Engineer with 2+ years of experience building scalable web
+              applications, AI-powered products, and high-performance backend systems.
+              Passionate about modern web technologies, system design, and turning
+              complex ideas into production-ready solutions.
+            </p>
+
+
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
             <div className="space-y-4">
