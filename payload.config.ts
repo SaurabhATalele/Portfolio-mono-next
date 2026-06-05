@@ -1,5 +1,5 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { lexicalEditor, EXPERIMENTAL_TableFeature, FixedToolbarFeature, InlineToolbarFeature } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -24,7 +24,18 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Blogs, Tags, Testimonials],
-  editor: lexicalEditor(),
+  editor: lexicalEditor(
+    {
+      features: ({ defaultFeatures }) => [
+        ...defaultFeatures.filter(
+          (f) => f.key !== 'inlineToolbar' // remove default inline toolbar
+        ),
+        EXPERIMENTAL_TableFeature(),
+        FixedToolbarFeature(),
+        InlineToolbarFeature(),
+      ],
+    }
+  ),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

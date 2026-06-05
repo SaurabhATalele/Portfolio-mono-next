@@ -57,7 +57,7 @@ export function Hero() {
           <p className="text-tertiary text-body-md opacity-60">Delivered robust internal tools, automation, and enterprise solutions.</p>
         </div>
         <div className="space-y-2">
-          <div className="text-[48px] font-display font-bold text-on-surface">Full Stack + AI</div>
+          <div className="text-[48px] font-display font-bold text-on-surface">Full Stack</div>
           <div className="font-code-sm text-code-sm text-primary uppercase tracking-widest">Tech Specialization</div>
           <p className="text-tertiary text-body-md opacity-60">Building AI-powered automation, Full stack development and enterprise solutions.</p>
         </div>
