@@ -5,27 +5,14 @@ import React from 'react'
 
 export const revalidate = 86400
 
-type Props = {
-  searchParams: Promise<{
-    q?: string
-  }>
-}
 
-export default async function BlogsPage({ searchParams }: Props) {
-  const { q = '' } = await searchParams
+export default async function BlogsPage() {
 
   const payload = await getPayload({ config })
 
   const posts = await payload.find({
     collection: 'blogs',
     depth: 1,
-    where: q
-      ? {
-        title: {
-          contains: q,
-        },
-      }
-      : undefined,
   })
 
   return (
@@ -44,14 +31,6 @@ export default async function BlogsPage({ searchParams }: Props) {
         </p>
 
       </div>
-      <form className='my-4 w-1/2'>
-        <input
-          name="q"
-          defaultValue={q}
-          placeholder="Search Blogs..."
-          className="w-full p-4 border border-black/10 dark:border-white/10 placeholder:text-tertiary"
-        />
-      </form>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.docs.map((post: any) => (
