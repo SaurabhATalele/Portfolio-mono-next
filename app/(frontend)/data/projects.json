@@ -10,7 +10,7 @@
       "MongoDB",
       "AI"
     ],
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070",
+    "image": "/images/profilizer-pro.webp",
     "github": "https://github.com/SaurabhATalele/ProfilizerPro",
     "demo": "https://profilizer-pro.vercel.app"
   },
@@ -24,7 +24,7 @@
       "TypeScript",
       "Tailwind"
     ],
-    "image": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=2070",
+    "image": "/images/mythic-codex.webp",
     "github": "https://github.com/SaurabhATalele/Mythic-Codex-Clone",
     "demo": "https://mythic-codex-saurabhtalele.vercel.app/"
   },
