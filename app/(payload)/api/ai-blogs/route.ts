@@ -15,8 +15,6 @@ const google = createGoogleGenerativeAI({
 const payload = await getPayload({ config })
 
 export async function POST(req: Request) {
-
-    const body = await req.json();
     const headers = req.headers;
     if (!headers.get("Authorization")) {
         return NextResponse.json({
@@ -49,13 +47,28 @@ export async function POST(req: Request) {
     }
 
     try {
-        const { title, slug } = body;
-        if (!title || !slug) {
-            return NextResponse.json({
-                success: false,
-                message: "Title and slug are required",
-            }, { status: 400 });
-        }
+        const title_response = await generateText({
+            model: google("gemini-3.1-flash-lite-preview"),
+            prompt: `
+        You are an expert SEO content strategist specializing in technical content.
+
+        Generate exactly ONE unique, high-quality technical blog topic.
+
+        Requirements:
+        - The topic must be SEO-friendly and optimized for organic search.
+        - Focus on software development, web development, AI, DevOps, cloud computing, databases, cybersecurity, or system design.
+        - Target developers, engineers, or technical professionals.
+        - Prefer long-tail keywords with strong search intent.
+        - The topic should be practical, actionable, and relevant to current industry trends.
+        - Avoid generic or overused titles.
+        - Do not repeat previously generated topics.
+        - Only give single line topic
+        `
+        })
+
+        const title = title_response.text;
+
+        const slug = slugify(title);
 
         const { text } = await generateText({
             model: google("gemini-3.1-flash-lite-preview"),
@@ -88,21 +101,26 @@ export async function POST(req: Request) {
                         `,
         });
 
-        const { image } = await generateImage({
-            model: google.image("imagen-4.0-fast-generate-001"),
-            prompt: `
-                    Create a modern, eye-catching blog thumbnail for the article titled "${title}".
-                    
-                    Design Style:
-                    
-                    Professional and high-quality
-                    Clean composition with strong visual hierarchy
-                    Vibrant colors and high contrast
-                    Modern tech-inspired aesthetic
-                    Suitable for a blog cover and social media sharing
+        let uploadedMedia: any;
 
+        try {
+
+
+            const { image } = await generateImage({
+                model: google.image("gemini-2.5-flash-image"),
+                prompt: `
+                Create a modern, eye-catching blog thumbnail for the article titled "${title}".
+                
+                Design Style:
+                
+                Professional and high-quality
+                Clean composition with strong visual hierarchy
+                Vibrant colors and high contrast
+                Modern tech-inspired aesthetic
+                Suitable for a blog cover and social media sharing
+                
                     Visual Elements:
-
+                    
                     Include imagery related to ${title}
                     Use relevant icons, illustrations, or realistic visuals
                     Add subtle gradients and lighting effects
@@ -114,22 +132,25 @@ export async function POST(req: Request) {
                     Sharp details and crisp typography
                     Professional blog banner quality
                     No watermarks, logos, or unnecessary text`,
-        })
+            })
 
-        const imageBuffer = Buffer.from(image.uint8Array)
+            const imageBuffer = Buffer.from(image.uint8Array)
 
-        const uploadedMedia = await payload.create({
-            collection: 'media',
-            data: {
-                alt: title,
-            },
-            file: {
-                data: imageBuffer,
-                mimetype: 'image/png',
-                name: `${slug}.png`,
-                size: imageBuffer.length,
-            },
-        })
+            uploadedMedia = await payload.create({
+                collection: 'media',
+                data: {
+                    alt: title,
+                },
+                file: {
+                    data: imageBuffer,
+                    mimetype: 'image/png',
+                    name: `${slug}.png`,
+                    size: imageBuffer.length,
+                },
+            })
+        } catch (error) {
+            console.log(error)
+        }
 
         const lexicalJSON = convertMarkdownToLexical({
             editorConfig: await editorConfigFactory.default({
@@ -159,3 +180,10 @@ export async function POST(req: Request) {
         }, { status: 500 });
     }
 }
+
+const slugify = (text: string) => {
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+};

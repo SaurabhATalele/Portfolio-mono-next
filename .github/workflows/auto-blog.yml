@@ -1,0 +1,41 @@
+name: Daily Auto Blog Generation
+
+on:
+  schedule:
+    # 10:00 AM IST = 04:30 AM UTC
+    - cron: "30 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Authenticate
+        id: auth
+        run: |
+          RESPONSE=$(curl -s -X POST "${{ secrets.AUTH_API_URL }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "email": "${{ secrets.AUTH_EMAIL }}",
+              "password": "${{ secrets.AUTH_PASSWORD }}"
+            }')
+
+          TOKEN=$(echo "$RESPONSE" | jq -r '.token')
+
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
+            echo "Authentication failed"
+            echo "$RESPONSE"
+            exit 1
+          fi
+
+          echo "token=$TOKEN" >> $GITHUB_OUTPUT
+
+      - name: Generate Blog
+        run: |
+          curl -X POST "${{ secrets.BLOGS_API_URL }}" \
+            -H "Authorization: Bearer ${{ steps.auth.outputs.token }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "autoGenerate": true
+            }'
