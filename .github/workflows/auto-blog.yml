@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Validate Secrets
+        run: |
+          [ -z "${{ secrets.AUTH_API_URL }}" ] && echo "AUTH_API_URL missing" && exit 1
+          [ -z "${{ secrets.AUTH_EMAIL }}" ] && echo "AUTH_EMAIL missing" && exit 1
+          [ -z "${{ secrets.AUTH_PASSWORD }}" ] && echo "AUTH_PASSWORD missing" && exit 1
+          
       - name: Authenticate
         id: auth
         run: |
