@@ -36,4 +36,3 @@ jobs:
           curl -X POST "${{ secrets.BLOGS_API_URL }}" \
             -H "Authorization: Bearer ${{ steps.auth.outputs.token }}" \
             -H "Content-Type: application/json"
-            -d '{}'
