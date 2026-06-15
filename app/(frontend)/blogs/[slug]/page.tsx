@@ -208,7 +208,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <article className="min-h-screen pb-32">
       {/* Hero Section */}
-      <div className="relative w-full overflow-hidden bg-black">
+      <div className="relative w-full overflow-visible min-h-[50vh] bg-black pb-24 md:pb-32">
         {post.image && typeof post.image === 'object' && (
           <img
             src={post.image.url || ''}
@@ -250,7 +250,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </div>
 
       {/* Content Section */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-24 mt-24">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-24 mt-6 md:mt-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Main Content */}
           <div className="lg:col-span-8 space-y-12">

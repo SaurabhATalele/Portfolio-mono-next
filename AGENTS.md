@@ -20,6 +20,7 @@ This is a Next.js 15 application using:
 * Avoid unnecessary useEffect hooks.
 * Use Tailwind CSS for styling.
 * Follow ESLint and Prettier rules.
+* If project behavior changes or new patterns are introduced, update this file to reflect the new behavior.
 
 ## File Structure
 
