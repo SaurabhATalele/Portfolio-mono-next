@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 
 import { Analytics } from "@vercel/analytics/next"
@@ -52,6 +53,8 @@ export const metadata: Metadata = {
   },
 };
 
+const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -70,6 +73,21 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {googleAnalyticsId ? (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+                strategy="afterInteractive"
+              />
+              <Script id="google-analytics" strategy="afterInteractive">
+                {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}', { page_path: window.location.pathname });`}
+              </Script>
+            </>
+          ) : null}
+
           <Analytics />
 
           <Header />

@@ -62,8 +62,9 @@ Create a `.env` file (see `.env.example`). Typical variables:
 ```
 NEXT_PUBLIC_PAYLOAD_URL=https://cms.example.com
 NEXT_PUBLIC_PAYLOAD_SECRET=your-secret-key
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
 ```
-These are required for the Payload CMS client.
+These are required for the Payload CMS client and Google Analytics.
 
 ## 🤝 Contributing
 1. Fork the repo.
