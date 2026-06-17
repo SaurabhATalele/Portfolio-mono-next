@@ -12,6 +12,8 @@ interface Testimonial {
   content: string;
   rating: number;
   createdAt: string;
+  position?: string;
+  organization?: string;
 }
 
 interface User {

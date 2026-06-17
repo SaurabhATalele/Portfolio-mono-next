@@ -40,6 +40,14 @@ export const Testimonials: CollectionConfig = {
       max: 5,
     },
     {
+      name: 'position',
+      type: 'text',
+    },
+    {
+      name: 'organization',
+      type: 'text',
+    },
+    {
       name: 'approved',
       type: 'checkbox',
       defaultValue: true, // Show immediately after adding

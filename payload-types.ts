@@ -225,6 +225,8 @@ export interface Testimonial {
   avatar?: string | null;
   content: string;
   rating: number;
+  position?: string | null;
+  organization?: string | null;
   approved?: boolean | null;
   updatedAt: string;
   createdAt: string;
@@ -395,6 +397,8 @@ export interface TestimonialsSelect<T extends boolean = true> {
   avatar?: T;
   content?: T;
   rating?: T;
+  position?: T;
+  organization?: T;
   approved?: T;
   updatedAt?: T;
   createdAt?: T;

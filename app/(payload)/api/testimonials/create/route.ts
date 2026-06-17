@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { content, rating } = await req.json()
+    const { content, rating, position, organization } = await req.json()
     if (!content || !rating) {
       return NextResponse.json({ error: 'Content and rating are required' }, { status: 400 })
     }
@@ -33,6 +33,8 @@ export async function POST(req: Request) {
         avatar: user.avatar || '',
         content,
         rating: Number(rating),
+        position: position || '',
+        organization: organization || '',
         approved: true, // Auto approve for display
       }
     })

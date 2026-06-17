@@ -15,6 +15,8 @@ export default function AddTestimonialPage() {
 
   const [content, setContent] = useState("");
   const [rating, setRating] = useState(5);
+  const [position, setPosition] = useState("");
+  const [organization, setOrganization] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -49,7 +51,7 @@ export default function AddTestimonialPage() {
       const res = await fetch("/api/testimonials/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content, rating }),
+        body: JSON.stringify({ content, rating, position, organization }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -111,6 +113,28 @@ export default function AddTestimonialPage() {
                   </svg>
                 </button>
               ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <label className="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Position</label>
+              <input
+                type="text"
+                value={position}
+                onChange={(e) => setPosition(e.target.value)}
+                placeholder="e.g. Software Engineer"
+                className="w-full p-3 rounded-lg bg-surface/50 border border-white/10 text-on-surface focus:border-primary focus:outline-none transition-all duration-300 font-body-md text-sm"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Organization</label>
+              <input
+                type="text"
+                value={organization}
+                onChange={(e) => setOrganization(e.target.value)}
+                placeholder="e.g. Google"
+                className="w-full p-3 rounded-lg bg-surface/50 border border-white/10 text-on-surface focus:border-primary focus:outline-none transition-all duration-300 font-body-md text-sm"
+              />
             </div>
           </div>
           <div className="space-y-2">

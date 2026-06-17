@@ -10,6 +10,8 @@ interface Testimonial {
   content: string;
   rating: number;
   createdAt: string;
+  position?: string;
+  organization?: string;
   approved?: boolean;
 }
 
@@ -20,7 +22,9 @@ interface TestimonialCardProps {
 
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
-  const { name, avatar, content, createdAt } = testimonial;
+  const { name, avatar, content, position, organization } = testimonial;
+  const subtitle = [position, organization].filter(Boolean).join(" at ");
+
   return (
     <div className="min-w-[280px] max-w-[320px] h-[320px] snap-start flex-shrink-0">
       <div className="glass-panel p-6 rounded-xl space-y-4 hover:border-primary/50 transition-all duration-300 flex flex-col justify-between h-full">
@@ -39,9 +43,11 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           )}
           <div>
             <div className="font-bold text-on-surface text-body-md">{name}</div>
-            <div className="text-xs text-on-surface-variant/60">
-              {new Date(createdAt).toLocaleDateString("en-IN")}
-            </div>
+            {subtitle && (
+              <div className="text-xs text-on-surface-variant/60">
+                {subtitle}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -28,6 +28,8 @@ async function getTestimonials() {
       content: doc.content,
       rating: doc.rating,
       createdAt: doc.createdAt,
+      position: doc.position || '',
+      organization: doc.organization || '',
     }));
   } catch (error) {
     console.error("Error fetching testimonials from Payload:", error);
@@ -43,6 +45,8 @@ interface Testimonial {
   content: string;
   rating: number;
   createdAt: string;
+  position?: string;
+  organization?: string;
   approved?: boolean;
 }
 
